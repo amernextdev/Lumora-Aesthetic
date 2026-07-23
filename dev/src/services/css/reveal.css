@@ -1,0 +1,16 @@
+/* ══════════════════════════════════════════════
+   REVEAL — Scroll Reveal Effect
+   يُستخدم مع IntersectionObserver (انظر reveal.js)
+   ══════════════════════════════════════════════ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .75s var(--ease-out-expo), transform .75s var(--ease-out-expo);
+  transition-delay: var(--d, 0s);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}

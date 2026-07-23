@@ -144,15 +144,8 @@
   }
 
   /* ─────────────────────────────────────────
-     SCROLL REVEAL
+     SCROLL REVEAL — انتقلت إلى reveal.css
   ───────────────────────────────────────── */
-  .reveal {
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity .75s var(--ease-out-expo), transform .75s var(--ease-out-expo);
-    transition-delay: var(--d, 0s);
-  }
-  .reveal.visible { opacity: 1; transform: none; }
 
   /* ─────────────────────────────────────────
      HERO ENTRANCE ANIMATIONS
