@@ -179,3 +179,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 ───────────────────────────────────────── */
 #services, #why-us, #contact { padding-block: var(--space-section); }
 #results, #testimonials { padding-block: var(--space-section); }
+
+.icon {
+width: 1em;
+height: 1em;
+display: inline-block;
+fill: currentColor;
+vertical-align: -0.125em;
+overflow: visible;
+}

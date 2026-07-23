@@ -1,0 +1,35 @@
+════════════════════════════════════════
+  ICONS USED — Dr. Ellabban Website
+  Source: index.html (final version)
+  Total unique icons: 19  (16 solid + 3 brands)
+════════════════════════════════════════
+
+── SOLID (sprites/solid.svg) ──────────
+1.  arrow-down        → Hero "Explore Services" button
+2.  arrow-right        → Service cards CTA / Before-After arrows / Contact channel arrows
+3.  calendar-check     → Contact "Free Consultation" box
+4.  check              → Services "What's Included" checklist bullets
+5.  clock              → Contact box "Typically responds within minutes"
+6.  envelope           → Contact channel / Footer email
+7.  image              → Before/After placeholder (replaces fa-regular fa-image)
+8.  location-dot       → Contact channel / Footer address
+9.  microscope         → Why-Us card "Clinical Precision"
+10. palette            → Why-Us card "Aesthetic Mastery"
+11. phone              → Contact channel / Footer phone
+12. shield-halved      → Why-Us card "Trusted & Verified"
+13. star               → Services tab "Hollywood Smile" / testimonial star ratings / Why-Us card
+14. syringe            → Services tab "Oral Surgery" (replaces fa-scalpel, unavailable in Free set)
+15. teeth              → Services tab "Dental Implants" / Before-After "after" icon
+16. xmark              → Mobile menu close button
+
+── BRANDS (sprites/brands.svg) ─────────
+17. facebook-f          → Social links (nav, mobile menu, footer, contact)
+18. instagram           → Social links (nav, mobile menu, footer, contact)
+19. whatsapp            → Booking CTA buttons (nav, hero, contact, floating button)
+
+════════════════════════════════════════
+Notes:
+- fa-regular (fa-image) had no local sprite equivalent → mapped to solid/image.
+- fa-scalpel is a Pro-only icon (not in Free sprite) → replaced with solid/syringe.
+- Filtered sprite files (solid.svg / brands.svg) now contain ONLY these 19 symbols.
+════════════════════════════════════════
