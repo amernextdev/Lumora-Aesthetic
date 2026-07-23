@@ -1,0 +1,37 @@
+/* ═══════════════════════════════════════════════════════════
+   FONTS — Local (replaces Google Fonts CDN)
+   المسارات مطلقة من الجذر: /src/assets/fonts/...
+   ═══════════════════════════════════════════════════════════ */
+
+/* --- Cormorant Garamond — Regular (Variable Font) ---
+   يغطي الأوزان: 300 / 400 / 500 / 600 / 700 */
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("/src/assets/fonts/Cormorant_Garamond/CormorantGaramond-VariableFont_wght.ttf") format("truetype-variations"),
+       url("/src/assets/fonts/Cormorant_Garamond/CormorantGaramond-VariableFont_wght.ttf") format("truetype");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --- Cormorant Garamond — Italic (Variable Font) ---
+   يغطي الأوزان المستخدمة فعليًا: 300 / 400 */
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("/src/assets/fonts/Cormorant_Garamond/CormorantGaramond-Italic-VariableFont_wght.ttf") format("truetype-variations"),
+       url("/src/assets/fonts/Cormorant_Garamond/CormorantGaramond-Italic-VariableFont_wght.ttf") format("truetype");
+  font-weight: 300 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* --- Inter — Regular (Variable Font) ---
+   يغطي الأوزان: 300 / 400 / 500 / 600 (بدون Italic) */
+@font-face {
+  font-family: "Inter";
+  src: url("/src/assets/fonts/Inter/Inter-VariableFont_opsz,wght.ttf") format("truetype-variations"),
+       url("/src/assets/fonts/Inter/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+  font-weight: 300 600;
+  font-style: normal;
+  font-display: swap;
+}
