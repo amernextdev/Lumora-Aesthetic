@@ -1,0 +1,211 @@
+/* ============================================================
+   HEADER.CSS — Header / Main Nav / Mobile Menu
+   Extracted from main.css
+   Dependencies: variables.css (design tokens: --z-overlay, --space-*,
+   --color-*, --font-*, --weight-*, --tracking-*, --duration-*, --ease-*,
+   --radius-*, --container-padding)
+   ============================================================ */
+
+  /* ─────────────────────────────────────────
+     HEADER / NAV
+  ───────────────────────────────────────── */
+  #site-header { position: fixed; top: 0; left: 0; right: 0; z-index: var(--z-overlay); }
+  #main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-6);
+    height: 72px;
+    padding-inline: var(--container-padding);
+    background: rgba(9, 17, 31, 0);
+    border-bottom: 1px solid transparent;
+    transition: background var(--duration-slow) var(--ease-out-expo), border-color var(--duration-slow);
+  }
+  #main-nav.scrolled {
+    background: rgba(9, 17, 31, .96);
+    border-color: var(--color-gold-border);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+  .nav-logo { display: flex; flex-direction: column; line-height: 1.1; text-decoration: none; }
+  .logo-name {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: var(--weight-semibold);
+    color: var(--color-gold-warm);
+    letter-spacing: .02em;
+  }
+  .logo-tag {
+    font-size: .62rem;
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+  .nav-links { display: flex; align-items: center; gap: 2.2rem; list-style: none; /* no matching variable */ }
+  .nav-link {
+    font-size: .78rem;
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color var(--duration-base);
+    position: relative;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -3px; left: 0; right: 100%;
+    height: 1px;
+    background: var(--color-gold-warm);
+    transition: right .3s var(--ease-out-expo);
+  }
+  .nav-link:hover { color: var(--color-gold-warm); }
+  .nav-link:hover::after { right: 0; }
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    background: var(--color-gold-warm);
+    color: var(--color-bg-base);
+    font-size: .75rem;
+    font-weight: var(--weight-bold);
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+    padding: .6rem 1.3rem; /* no matching variable */
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    transition: background var(--duration-base), transform .3s var(--ease-gold);
+    flex-shrink: 0;
+  }
+  .nav-cta:hover { background: var(--color-gold-bright); transform: translateY(-1px); }
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px; /* no matching variable */
+    padding: 5px; /* no matching variable */
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 24px;
+    height: 1.5px;
+    background: var(--color-text-secondary);
+    transition: transform .3s, opacity .3s;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+  /* ─────────────────────────────────────────
+     MOBILE MENU — [V2] refined elegant links
+  ───────────────────────────────────────── */
+  .mobile-menu {
+    position: fixed;
+    inset: 0;
+    z-index: calc(var(--z-overlay) + 10);
+    background: rgba(9, 17, 31, .97);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-10);
+    padding: var(--space-8);
+    opacity: 0;
+    transform: translateY(-12px);
+    pointer-events: none;
+    transition: opacity .35s var(--ease-out-expo), transform .35s var(--ease-out-expo);
+  }
+  .mobile-menu:not([hidden]) {
+    opacity: 1;
+    transform: none;
+    pointer-events: all;
+  }
+  /* [V2] Refined nav links — elegant separators, not massive text */
+  .mobile-menu nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+    max-width: 280px;
+    border: 1px solid var(--color-gold-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--color-bg-surface);
+  }
+  .mobile-menu nav ul li {
+    width: 100%;
+    border-bottom: 1px solid var(--color-gold-border);
+  }
+  .mobile-menu nav ul li:last-child { border-bottom: none; }
+  .mobile-menu nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    font-family: var(--font-body);
+    font-size: .82rem;
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    padding: var(--space-4) var(--space-6);
+    transition: color var(--duration-base), background var(--duration-base);
+  }
+  .mobile-menu nav a:hover {
+    color: var(--color-gold-warm);
+    background: var(--color-bg-elevated);
+  }
+  .mobile-menu__close {
+    position: absolute;
+    top: 1.5rem;
+    right: var(--container-padding);
+    color: var(--color-text-muted);
+    font-size: 1.3rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    transition: color var(--duration-base);
+  }
+  .mobile-menu__close:hover { color: var(--color-gold-warm); }
+  .mobile-menu__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: .6rem; /* no matching variable */
+    background: var(--color-gold-warm);
+    color: var(--color-bg-base);
+    font-weight: var(--weight-bold);
+    font-size: .82rem;
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    padding: .9rem 2.2rem; /* no matching variable */
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    transition: background var(--duration-base);
+  }
+  .mobile-menu__cta:hover { background: var(--color-gold-bright); }
+  .mobile-menu__socials { display: flex; gap: var(--space-6); }
+  .mobile-menu__socials a {
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+    transition: color var(--duration-base);
+  }
+  .mobile-menu__socials a:hover { color: var(--color-gold-warm); }
+
+  /* ─────────────────────────────────────────
+     RESPONSIVE — MOBILE (≤768px)
+     [extracted from main.css's mobile media query —
+      the rest of that @media block stays in main.css]
+  ───────────────────────────────────────── */
+  @media (max-width: 768px) {
+    .nav-links, .nav-cta { display: none; }
+    .nav-hamburger { display: flex; }
+  }
