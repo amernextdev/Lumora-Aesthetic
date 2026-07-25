@@ -1,0 +1,125 @@
+/* ============================================================
+   WHY US SECTION — [V2] right side vertically centered
+   مستخرج من main.css
+   ============================================================ */
+
+#why-us { padding-block: var(--space-section); background: var(--color-bg-base); }
+
+.why-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: var(--space-20);
+  align-items: center; /* [V2] changed from start → center for vertical alignment */
+}
+.why-photo-wrap { position: relative; margin-top: var(--space-10); }
+.why-photo-frame {
+  border: 1px solid var(--color-gold-border);
+  padding: .8rem; /* no matching variable */
+  background: var(--color-bg-surface);
+  border-radius: var(--radius-sm);
+}
+.why-photo-frame img { width: 100%; border-radius: 2px; display: block; }
+.why-photo-frame::after {
+  content: '';
+  position: absolute;
+  bottom: -14px; right: -14px;
+  width: 55%; height: 35%;
+  border-right: 2px solid var(--color-gold-warm);
+  border-bottom: 2px solid var(--color-gold-warm);
+  pointer-events: none;
+}
+.why-badge {
+  position: absolute;
+  bottom: 2.5rem;
+  left: -2rem;
+  background: var(--color-gold-warm);
+  color: var(--color-bg-base);
+  padding: 1rem 1.4rem; /* no matching variable */
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-gold);
+}
+.why-badge__num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-none);
+  margin-bottom: .2rem; /* no matching variable */ /* no matching variable */
+}
+.why-badge__txt {
+  font-size: .65rem;
+  font-weight: var(--weight-semibold);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+.why-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem; /* no matching variable */
+}
+.why-card {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-sm);
+  padding: 1.6rem; /* no matching variable */
+  transition: background .3s, border-color .3s, transform var(--duration-slow) var(--ease-out-expo);
+  position: relative;
+  overflow: hidden;
+}
+.why-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--color-gold-warm);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--duration-slow) var(--ease-out-expo);
+}
+.why-card:hover { background: var(--color-bg-elevated); border-color: var(--color-gold-muted); transform: translateY(-3px); }
+.why-card:hover::before { transform: scaleX(1); }
+.why-card__icon {
+  width: 42px; height: 42px;
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold-warm);
+  font-size: .9rem;
+  margin-bottom: var(--space-4);
+  background: var(--color-overlay-gold);
+}
+.why-card__body h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: var(--weight-medium);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+}
+.why-card__body p {
+  font-size: .82rem;
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE — TABLET (≤1100px)
+───────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .why-inner { grid-template-columns: 1fr; gap: var(--space-12); align-items: start; }
+  .why-left { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-8); align-items: start; }
+  .why-photo-wrap { margin-top: 0; }
+  .why-badge { left: .5rem; bottom: 1.5rem; }
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE — MOBILE (≤768px)
+───────────────────────────────────────── */
+@media (max-width: 768px) {
+  .why-left { grid-template-columns: 1fr; }
+  .why-photo-wrap { display: none; }
+  .why-cards { grid-template-columns: 1fr; }
+  .why-inner { align-items: start; }
+}
