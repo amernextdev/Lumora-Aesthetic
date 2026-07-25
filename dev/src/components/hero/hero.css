@@ -6,7 +6,7 @@
    ============================================================ */
 
 /* ─────────────────────────────────────────
-   HERO — [V2] removed location + trust strip
+   HERO — [V3] location removed, trust strip restored
 ───────────────────────────────────────── */
 #hero {
   position: relative;
@@ -118,6 +118,51 @@
 .hero__image-frame:hover .hero__image-border { transform: translate(-5px, 5px); }
 
 /* ─────────────────────────────────────────
+   HERO — TRUST STRIP
+   ⚠️ NOTE: كانت اتشالت من هنا في [V2] ("removed location + trust
+   strip")، وانتقلت مؤقتاً لـ style.css. اترجعت هنا بناءً على طلب
+   صريح — لو الشيل كان قرار تصميم مقصود لسبب معين، يفضّل مراجعته
+   قبل النشر.
+───────────────────────────────────────── */
+.hero__trust {
+  position: relative;
+  z-index: 2; /* no matching variable */
+  border-top: 1px solid var(--color-gold-border);
+  background: var(--color-bg-surface);
+}
+.trust-strip { display: flex; align-items: stretch; }
+.trust-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .3rem; /* no matching variable */
+  padding: var(--space-8) var(--space-4);
+}
+.trust-sep {
+  width: 1px;
+  background: var(--color-gold-border);
+  margin-block: 1.2rem;
+  flex-shrink: 0;
+}
+.trust-num {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: var(--weight-semibold);
+  color: var(--color-gold-warm);
+  line-height: 1;
+}
+.trust-lbl {
+  font-size: .68rem;
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+/* ─────────────────────────────────────────
    HERO — Responsive: TABLET (≤1100px)
 ───────────────────────────────────────── */
 @media (max-width: 1100px) {
@@ -152,6 +197,11 @@
     max-width: 320px;
   }
   .hero__actions .btn { justify-content: center; }
+
+  /* Trust Strip — mobile */
+  .trust-strip { flex-wrap: wrap; }
+  .trust-item { flex: 0 0 50%; }
+  .trust-sep { display: none; }
 }
 
 /* ─────────────────────────────────────────
@@ -159,4 +209,7 @@
 ───────────────────────────────────────── */
 @media (max-width: 400px) {
   .hero__name { font-size: clamp(2rem, 12vw, 3rem); }
+
+  /* Trust Strip — small mobile */
+  .trust-item { flex: 0 0 100%; }
 }

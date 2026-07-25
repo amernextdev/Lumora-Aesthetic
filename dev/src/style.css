@@ -1,6 +1,19 @@
-/* ====================
-    - Imports -
-   ==================== */
+/* =============================================================
+   STYLE.CSS — Table of Contents
+   1. Imports
+   2. Global Resets & Base Styles
+   3. Utils
+   4. Typography Helpers
+   5. Buttons
+   6. Entrance Animations
+   7. Section Spacing
+   8. Icon Utility
+   9. Floating WhatsApp Button
+   ============================================================= */
+
+/* =============================================================
+   1. IMPORTS
+   ============================================================= */
 
 /* services */
 @import '/src/services/css/fonts.css';
@@ -8,12 +21,18 @@
 @import '/src/services/css/reveal.css';
 
 /* components */
+@import '/src/components/header/header.css';
+@import '/src/components/hero/hero.css';
+@import '/src/components/services/services.css';
+@import '/src/components/results/results.css';
+@import '/src/components/why-us/why-us.css';
+@import '/src/components/testimonials/testimonials.css';
+@import '/src/components/contact/contact.css';
+@import '/src/components/footer/footer.css';
 
-
-
-/* ─────────────────────────────────────────
-   GLOBAL RESETS & BASE STYLES
-───────────────────────────────────────── */
+/* =============================================================
+   2. GLOBAL RESETS & BASE STYLES
+   ============================================================= */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -26,12 +45,12 @@ html {
   overflow-x: hidden;
 }
 body {
-  background-color    : var(--color-bg-base);
-  color               : var(--color-text-primary);
-  font-family         : var(--font-body);
-  font-size           : var(--text-base);
-  line-height         : var(--leading-normal);
-  font-variation-settings: "opsz" 16, "wght" 400;
+  background-color        : var(--color-bg-base);
+  color                    : var(--color-text-primary);
+  font-family              : var(--font-body);
+  font-size                : var(--text-base);
+  line-height              : var(--leading-normal);
+  font-variation-settings  : "opsz" 16, "wght" 400;
   -webkit-font-smoothing   : antialiased;
   -moz-osx-font-smoothing  : grayscale;
   text-rendering           : optimizeLegibility;
@@ -41,9 +60,9 @@ img, video { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
 button { cursor: pointer; border: none; background: none; font-family: inherit; }
 
-/* ─────────────────────────────────────────
-   UTILS
-───────────────────────────────────────── */
+/* =============================================================
+   3. UTILS
+   ============================================================= */
 .skip-link {
   position: absolute;
   top: -100%;
@@ -66,9 +85,18 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   padding-inline: var(--container-padding);
 }
 
-/* ─────────────────────────────────────────
-   TYPOGRAPHY HELPERS
-───────────────────────────────────────── */
+.icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  fill: currentColor;
+  vertical-align: -0.125em;
+  overflow: visible;
+}
+
+/* =============================================================
+   4. TYPOGRAPHY HELPERS
+   ============================================================= */
 .eyebrow {
   display: inline-flex;
   align-items: center;
@@ -89,6 +117,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   flex-shrink: 0;
 }
 .section-header { max-width: 560px; }
+.section-header.reveal { margin-bottom: 3.5rem; /* no matching variable */ }
 .section-title {
   font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 2.8rem);
@@ -109,9 +138,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: var(--color-text-secondary);
 }
 
-/* ─────────────────────────────────────────
-   BUTTONS
-───────────────────────────────────────── */
+/* =============================================================
+   5. BUTTONS
+   ============================================================= */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -148,10 +177,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transform: translateY(-2px);
 }
 
-/* ─────────────────────────────────────────
-   ENTRANCE ANIMATIONS (utility classes/keyframes
-   used across multiple sections of the page)
-───────────────────────────────────────── */
+/* =============================================================
+   6. ENTRANCE ANIMATIONS
+   (utility classes/keyframes used across multiple sections)
+   ============================================================= */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(22px); }
   to   { opacity: 1; transform: none; }
@@ -173,18 +202,40 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   animation: fadeIn 1.1s var(--ease-out-expo) var(--duration-slow) forwards;
 }
 
-/* ─────────────────────────────────────────
-   SECTION SPACING (utility مشتركة بين أكثر من قسم،
-   بتحدد نفس الـ padding-block لكل الأقسام الرئيسية)
-───────────────────────────────────────── */
+/* =============================================================
+   7. SECTION SPACING
+   (utility مشتركة بين أكثر من قسم، بتحدد نفس الـ padding-block
+   لكل الأقسام الرئيسية)
+   ============================================================= */
 #services, #why-us, #contact { padding-block: var(--space-section); }
 #results, #testimonials { padding-block: var(--space-section); }
 
-.icon {
-width: 1em;
-height: 1em;
-display: inline-block;
-fill: currentColor;
-vertical-align: -0.125em;
-overflow: visible;
+/* =============================================================
+   8. FLOATING WHATSAPP BUTTON
+   ============================================================= */
+.wa-float {
+  position: fixed;
+  bottom: 1.8rem;
+  right: 1.8rem;
+  width: 54px; height: 54px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white; /* no matching variable */
+  font-size: 1.4rem;
+  z-index: var(--z-toast);
+  box-shadow: 0 4px 20px rgba(37,211,102,.4); /* no matching variable */
+  text-decoration: none;
+  transition: transform .35s var(--ease-gold), box-shadow .35s;
+}
+.wa-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 30px rgba(37,211,102,.55); /* no matching variable */
+}
+
+/* -- Floating WhatsApp Button: Mobile (≤768px) -- */
+@media (max-width: 768px) {
+  .wa-float { bottom: 1.2rem; right: 1.2rem; width: 50px; height: 50px; font-size: var(--text-lg); }
 }

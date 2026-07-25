@@ -18,6 +18,11 @@
   background: var(--color-bg-surface);
   border-radius: var(--radius-sm);
 }
+.why-photo-wrap {
+  position: relative;
+  margin-top: var(--space-10);
+  overflow: visible; 
+}
 .why-photo-frame img { width: 100%; border-radius: 2px; display: block; }
 .why-photo-frame::after {
   content: '';
@@ -28,15 +33,25 @@
   border-bottom: 2px solid var(--color-gold-warm);
   pointer-events: none;
 }
+
 .why-badge {
   position: absolute;
-  bottom: 2.5rem;
-  left: -2rem;
+  bottom: -1.8rem;     
+  left: -1.8rem;  
+  z-index: 5;  
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   background: var(--color-gold-warm);
   color: var(--color-bg-base);
-  padding: 1rem 1.4rem; /* no matching variable */
+  padding: 0;
   border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-gold);
+  box-shadow: 0 10px 30px rgba(0,0,0,.35), var(--shadow-gold); 
+  border: 3px solid var(--color-bg-base);
 }
 .why-badge__num {
   display: block;
