@@ -148,6 +148,15 @@
 @media (max-width: 768px) {
   .contact-inner { grid-template-columns: 1fr; gap: var(--space-12); align-items: start; }
   .cta-box { position: static; }
+  /* Icon+text as a single row breaks visually once the text wraps to
+     2 lines (the icon stays pinned to the row start instead of being
+     centered with the text as a unit). Stacking the icon above the
+     text keeps both perfectly centered regardless of text length. */
+  .cta-box__btn {
+    flex-direction: column;
+    gap: .5rem; /* no matching variable */
+    text-align: center;
+  }
 }
 
 /* ─────────────────────────────────────────

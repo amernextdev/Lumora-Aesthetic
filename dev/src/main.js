@@ -22,6 +22,7 @@ import '/src/services/js/reveal.js';
    ============================================================= */
 import '/src/components/header/header.js';
 import '/src/components/services/services.js';
+import '/src/components/results/results.js';
 
 /* =============================================================
    4. APP BEHAVIOR
