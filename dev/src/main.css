@@ -67,103 +67,8 @@
   .section-header.reveal { margin-bottom: 3.5rem; /* no matching variable */ }
 
   /* ─────────────────────────────────────────
-     BEFORE / AFTER — [V2] vertical cards, no results-quote
+     BEFORE / AFTER — انتقلت إلى results.css
   ───────────────────────────────────────── */
-  #results {
-    padding-block: var(--space-section);
-    background: var(--color-bg-surface);
-    border-top: 1px solid var(--color-gold-border);
-    border-bottom: 1px solid var(--color-gold-border);
-  }
-  #results .section-header.reveal { margin-bottom: var(--space-12); }
-
-  .ba-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-6);
-  }
-  .ba-card {
-    background: var(--color-bg-elevated);
-    border: 1px solid var(--color-gold-border);
-    border-radius: var(--radius-sm);
-    overflow: hidden;
-    transition: border-color .3s, transform var(--duration-slow) var(--ease-out-expo);
-  }
-  .ba-card:hover { border-color: var(--color-gold-muted); transform: translateY(-4px); }
-
-  /* [V2] Vertical layout — before on top, after below */
-  .ba-card__inner {
-    display: flex;
-    flex-direction: column;
-  }
-  .ba-side { position: relative; overflow: hidden; }
-  .ba-placeholder {
-    width: 100%;
-    height: 220px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: .5rem; /* no matching variable */
-    background: var(--color-bg-subtle);
-    color: var(--color-text-muted);
-    font-size: var(--text-xs);
-    font-weight: var(--weight-medium);
-    letter-spacing: var(--tracking-wide);
-    text-transform: uppercase;
-    transition: background .3s;
-  }
-  /* [V2] Attempt to show real images if present */
-  .ba-placeholder img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    inset: 0;
-  }
-  .ba-placeholder i { font-size: 1.6rem; color: var(--color-gold-dim); }
-  .ba-placeholder--after { background: var(--color-bg-elevated); }
-  .ba-placeholder--after i { color: var(--color-gold-muted); }
-
-  /* [V2] Arrow between top and bottom */
-  .ba-arrow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 32px;
-    background: var(--color-bg-surface);
-    color: var(--color-gold-warm);
-    font-size: .7rem;
-    border-top: 1px solid var(--color-gold-border);
-    border-bottom: 1px solid var(--color-gold-border);
-  }
-  /* Rotate arrow to point down for vertical layout */
-  .ba-arrow i { transform: rotate(90deg); }
-
-  .ba-tag {
-    position: absolute;
-    bottom: .5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: .6rem;
-    font-weight: var(--weight-semibold);
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    padding: .2rem .6rem; /* no matching variable */
-    border-radius: var(--radius-full);
-  }
-  .ba-tag--before { background: rgba(9,17,31,.7); color: var(--color-text-muted); backdrop-filter: blur(4px); }
-  .ba-tag--after  { background: var(--color-gold-dim); color: var(--color-gold-bright); }
-  .ba-card__label {
-    padding: var(--space-3) var(--space-4);
-    font-size: .72rem;
-    font-weight: var(--weight-medium);
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    color: var(--color-text-muted);
-    border-top: 1px solid var(--color-gold-border);
-    text-align: center;
-  }
 
   /* ─────────────────────────────────────────
      WHY DR. MOHAMED — [V2] right side vertically centered
@@ -580,36 +485,7 @@
 
     /* Services mobile rules انتقلت إلى services.css */
 
-    /* Before/After — [V2] horizontal scroll + 3 dots indicator */
-    .ba-grid {
-      grid-template-columns: repeat(3, 80vw);
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      gap: var(--space-4);
-      padding-bottom: var(--space-2);
-    }
-    .ba-grid::-webkit-scrollbar { display: none; }
-    .ba-card { scroll-snap-align: start; }
-    .ba-placeholder { height: 180px; }
-
-    /* [V2] Scroll dots indicator for ba-grid */
-    .ba-scroll-hint {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: var(--space-2);
-      margin-top: var(--space-4);
-    }
-    .ba-scroll-hint span {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--color-bg-subtle);
-      display: block;
-      transition: background var(--duration-base);
-    }
-    .ba-scroll-hint span:first-child { background: var(--color-gold-warm); width: 18px; border-radius: var(--radius-full); }
+    /* Before/After mobile rules انتقلت إلى results.css */
 
     /* Why Us */
     .why-left { grid-template-columns: 1fr; }
@@ -639,10 +515,7 @@
     /* .svc-panel__left / .svc-panel__right rules انتقلت إلى services.css */
     .cta-box { padding: 2rem 1.4rem; /* no matching variable */ }
     /* .hero__name rule انتقل إلى hero.css */
-    .ba-grid { grid-template-columns: repeat(3, 88vw); }
+    /* .ba-grid small-mobile rule انتقلت إلى results.css */
   }
 
-  /* Hide scroll hint on desktop */
-  @media (min-width: 769px) {
-    .ba-scroll-hint { display: none; }
-  }
+  /* Hide scroll hint on desktop rule انتقلت إلى results.css */
