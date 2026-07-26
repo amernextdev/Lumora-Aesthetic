@@ -1,0 +1,11 @@
+# Cloudflare Pages redirects
+# https://developers.cloudflare.com/pages/configuration/redirects/
+
+# Normalize /index.html to the root
+/index.html   /   301
+
+# Note: this site is a single static page (sections are in-page anchors,
+# e.g. #services, #results, #contact) built with Vite — it is NOT a
+# client-side-routed SPA, so no wildcard "catch-all -> /index.html 200"
+# rule is added here. Doing so would silently turn every real 404 into
+# a 200 response and break the custom 404.html page below.
